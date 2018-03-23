@@ -1,7 +1,26 @@
-<h3>{{place.name}}</h3>
-<div class="details">{{t "places.submitted" user=place.owner.name}}</div>
-{{place.description}}
-{{#if place.link}}
-    <a href="{{place.link}}" target="blank">{{t "places.visit-link"}}</a>
-{{/if}}
+{{#unless editing}}
+    <header>
+        <h3>{{place.name}}</h3>
+        <div class="details">
+            {{t "places.submitted" user=place.owner.name}}
+            {{#if editable}}
+                <a {{action "toggleEdit"}}>{{t 'places.edit'}}</a>
+            {{/if}}
+        </div>
+    </header>
+    {{place.description}}
+    {{#if place.link}}
+        <a href="{{place.link}}" target="blank">{{t "places.visit-link"}}</a>
+    {{/if}}
 
+    <footer>
+        <ul class="tags">
+        {{#each place.tags as |tag|}}
+            <li>{{tag.name}}</li>
+        {{/each}}
+        </ul>
+    </footer>
+
+{{else}}
+    {{place-form place=place afterSave=(action "toggleEdit")}}
+{{/unless}}

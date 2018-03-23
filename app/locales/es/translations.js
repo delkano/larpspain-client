@@ -16,6 +16,7 @@ export default {
         'wiki': "Información",
         'profile': "Perfil",
         'login': "Acceder",
+        'register': "Registrarse",
         'logout': "Salir"
     },
     'login': {
@@ -24,7 +25,12 @@ export default {
         'button': "Acceder"
     },
     'register': {
-        'link': "Registrarse"
+        'name': "Nombre",
+        'username': "Email",
+        'password': "Contraseña",
+        'repassword': "Repetir contraseña",
+        'link': "Registrarse",
+        'button': "Registrarse"
     },
     'places': {
         'title': "Lugares de interés",
@@ -37,6 +43,8 @@ export default {
         'coords': "Coordenadas",
         'save': "Guardar",
         'visit-link': "Ir a página",
-        'submitted': "Lugar enviado por {{user}}"
+        'submitted': "Lugar enviado por {{user}}",
+        'edit': "Editar",
+        'cancel': "Cancelar"
     }
 };

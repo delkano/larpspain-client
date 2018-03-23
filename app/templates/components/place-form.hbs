@@ -1,9 +1,14 @@
-<form {{action 'save' on="submit"}} method="get" accept-charset="utf-8">
+<form {{action 'save' on="submit"}} accept-charset="utf-8" autocomplete="off">
     {{input value=place.name placeholder=(t "places.name")}}
     {{textarea value=place.description placeholder=(t "places.description")}}
     {{input value=place.address placeholder=(t "places.address")}}
     {{input value=place.coords placeholder=(t "places.coords")}}
     {{input type="url" value=place.link placeholder=(t "places.link")}}
 
+    {{#tag-input tags=place.tags addTag=(action "addTag") removeTagAtIndex=(action "removeTag") as |tag|}}
+        {{tag.name}}
+    {{/tag-input}}
+
+    <button type="button" {{action 'cancel'}}>{{t 'places.cancel'}}</button>
     <button>{{t 'places.save'}}</button>
 </form>

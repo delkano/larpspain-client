@@ -1,6 +1,6 @@
 <form {{action 'login' on="submit"}} accept-charset="utf-8" class="login">
-    {{input type='email' placeholder=(t 'login.username') value=username}}
-    {{input type='password' placeholder=(t 'login.password') value=password}}
+    {{input type='email' placeholder=(t 'login.username') value=username autocomplete="username"}}
+    {{input type='password' placeholder=(t 'login.password') value=password autocomplete="current-password"}}
     {{#if message}}
         <ul class='error'>
             {{{ message }}}

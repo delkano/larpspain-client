@@ -21,7 +21,8 @@
     {{place-item place=place}}
 {{/each}}
 
-<button type='button' {{action 'toggleForm'}}>{{if showForm (t 'places.hide-form') (t 'places.show-form')}}</button>
 {{#if showForm}}
-    {{place-form place=newPlace}}
+    {{place-form place=newPlace afterSave=(action "toggleForm")}}
+    {{else}}
+    <button type='button' {{action 'toggleForm'}}>{{t 'places.show-form'}}</button>
 {{/if}}

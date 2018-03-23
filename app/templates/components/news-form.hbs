@@ -1,1 +1,6 @@
-{{yield}}
+<form {{action 'save' on="submit"}} accept-charset="utf-8" autocomplete="off">
+    {{input value=news.name placeholder=(t "news.title")}}
+    {{textarea value=news.content placeholder=(t "news.content")}}
+
+    <button>{{t 'news.save'}}</button>
+</form>

@@ -38,6 +38,21 @@ header {
     }
 }
 
+.alert {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    z-index: 99999999;
+    border-radius: 0 0 0.5em 0.5em;
+    font-size: 1.5em;
+    
+    &.alert-info {
+        background-color: #00cc00;
+        color: #fff;
+    }
+}
 /**
  * Useful common classes
  */

@@ -1,1 +1,16 @@
-{{yield}}
+<article>
+    <header>
+        <h3>{{news.title}}</h3>
+        <div class="details">
+            {{t "news.published" author=news.owner.name date=news.datePublished}}
+        </div>
+    </header>
+    {{news.content}}
+    <footer>
+        <ul class="tags">
+        {{#each news.tags as |tag|}}
+            <li>{{tag.name}}</li>
+        {{/each}}
+        </ul>
+    </footer>
+</article>
