@@ -1,0 +1,16 @@
+<header id="main-header">
+    <h1 id="title">Larp Spain</h1>
+    {{menu-block}}
+</header>
+
+{{#each flashMessages.queue as |flash|}}
+  {{flash-message flash=flash}}
+{{/each}}
+
+<div id="content">
+    {{outlet}}
+</div>
+
+<footer>
+    
+</footer>

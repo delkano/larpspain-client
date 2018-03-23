@@ -1,0 +1,7 @@
+<h3>{{place.name}}</h3>
+<div class="details">{{t "places.submitted" user=place.owner.name}}</div>
+{{place.description}}
+{{#if place.link}}
+    <a href="{{place.link}}" target="blank">{{t "places.visit-link"}}</a>
+{{/if}}
+

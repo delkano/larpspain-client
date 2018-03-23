@@ -1,0 +1,15 @@
+<ul>
+    <li>{{#link-to 'index'}}{{t 'menu.home'}}{{/link-to}}</li>
+    <li>{{#link-to 'places'}}{{t 'menu.places'}}{{/link-to}}</li>
+    <li>{{#link-to 'events'}}{{t 'menu.events'}}{{/link-to}}</li>
+    {{#if session.isAuthenticated}}
+        <li>{{#link-to 'profile'}}{{t 'menu.profile'}} ({{currentUser.user.name}}){{/link-to}}</li>
+        <li><a {{action 'logout' on='click'}}>{{t "menu.logout"}}</a></li>
+    {{else}}
+    <li><a {{action 'toggleLogin' on='click'}}>{{t "menu.login"}}</a></li>
+    {{/if}}
+</ul>
+
+<div class="popup">
+    {{#if showLogin}}{{login-form afterLogin=(action 'toggleLogin')}}{{/if}}
+</div>

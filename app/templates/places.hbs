@@ -1,0 +1,27 @@
+<h2>{{t 'places.title'}}</h2>
+<div class="filters">
+    <strong>TODO</strong>: Añadir métodos de filtrado de lugares (provincia, código postal, qué sé yo.)
+</div>
+
+{{#leaflet-map lat=40.4 lng=-3.6 zoom=5 as |layers|}}
+    {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+
+    {{#each model as |place|}}
+        {{#if place.coords}}
+            {{#layers.marker location=place.coords as |marker|}}
+                {{#marker.popup}}
+                    {{place-item place=place}}
+                {{/marker.popup}}
+            {{/layers.marker}}
+        {{/if}}
+    {{/each}}
+{{/leaflet-map}}
+
+{{#each model as |place|}}
+    {{place-item place=place}}
+{{/each}}
+
+<button type='button' {{action 'toggleForm'}}>{{if showForm (t 'places.hide-form') (t 'places.show-form')}}</button>
+{{#if showForm}}
+    {{place-form place=newPlace}}
+{{/if}}

@@ -1,0 +1,9 @@
+<form {{action 'save' on="submit"}} method="get" accept-charset="utf-8">
+    {{input value=place.name placeholder=(t "places.name")}}
+    {{textarea value=place.description placeholder=(t "places.description")}}
+    {{input value=place.address placeholder=(t "places.address")}}
+    {{input value=place.coords placeholder=(t "places.coords")}}
+    {{input type="url" value=place.link placeholder=(t "places.link")}}
+
+    <button>{{t 'places.save'}}</button>
+</form>

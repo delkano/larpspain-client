@@ -1,0 +1,46 @@
+/**
+  * A collection of CSS styles that I use almost every single time
+  */
+
+* { box-sizing: border-box; }
+
+$main-color: #fff;
+$main-inverse: #000;
+
+$secondary-color: #bada55;
+$secondary-inverse: #fff;
+
+html {
+    font-family: "sans-serif";
+}
+
+/**
+ * Generic layout
+ */
+header {
+    nav ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            padding: 0.5em;
+            background-color: $secondary-color;
+            a {
+                text-decoration: none;
+                cursor: pointer;
+                color: $secondary-inverse;
+
+                &:hover { font-weight: 700; }
+            }
+        }
+    }
+}
+
+/**
+ * Useful common classes
+ */
+.details {
+    font-size: 0.8em;
+}

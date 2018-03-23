@@ -1,0 +1,12 @@
+<form {{action 'login' on="submit"}} accept-charset="utf-8" class="login">
+    {{input type='email' placeholder=(t 'login.username') value=username}}
+    {{input type='password' placeholder=(t 'login.password') value=password}}
+    {{#if message}}
+        <ul class='error'>
+            {{{ message }}}
+        </ul>
+    {{/if}}
+    <button>{{t 'login.button'}}</button>
+
+    {{#link-to 'register'}} {{t 'register.link'}} {{/link-to}}
+</form>
