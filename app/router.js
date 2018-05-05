@@ -11,6 +11,10 @@ Router.map(function() {
   this.route('events');
   this.route('places');
   this.route('register');
+  this.route('wiki', function() {
+    this.route('view', { path: '/:page_id' }); 
+    this.route('edit', { path: '/edit/:page_id' });
+  });
 });
 
 export default Router;

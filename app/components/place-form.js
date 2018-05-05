@@ -27,7 +27,7 @@ export default Component.extend({
                 }
             }
 
-            let promises = place.get("tags").map( tag => tag.save() );
+            let promises = place.get("tags").map( tag => tag.get("isNew")?tag.save():null );
 
             allSettled( promises).then( () => { // We're ignoring errors with saved tags for the moment
                 place.save().then(

@@ -22,15 +22,16 @@ export default {
     'login': {
         'username': "Email",
         'password': "Contaseña",
-        'button': "Acceder"
+        'button': "Acceder",
+        'register': "Registrarse",
     },
-    'register': {
+    'user': {
         'name': "Nombre",
         'username': "Email",
         'password': "Contraseña",
         'repassword': "Repetir contraseña",
-        'link': "Registrarse",
-        'button': "Registrarse"
+        'register': "Registrarse",
+        'save': "Guardar"
     },
     'places': {
         'title': "Lugares de interés",
